@@ -1,0 +1,5 @@
+C:\Users\GiangHTT\Documents\Visual Studio 2015\Projects\QLKhachSan\DAL\bin\Debug\DAL.dll.config
+C:\Users\GiangHTT\Documents\Visual Studio 2015\Projects\QLKhachSan\DAL\bin\Debug\DAL.dll
+C:\Users\GiangHTT\Documents\Visual Studio 2015\Projects\QLKhachSan\DAL\bin\Debug\DAL.pdb
+C:\Users\GiangHTT\Documents\Visual Studio 2015\Projects\QLKhachSan\DAL\obj\Debug\DAL.dll
+C:\Users\GiangHTT\Documents\Visual Studio 2015\Projects\QLKhachSan\DAL\obj\Debug\DAL.pdb

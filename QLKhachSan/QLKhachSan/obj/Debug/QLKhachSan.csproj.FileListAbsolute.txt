@@ -1,0 +1,14 @@
+C:\Users\GiangHTT\Documents\Visual Studio 2015\Projects\QLKhachSan\QLKhachSan\bin\Debug\QLKhachSan.exe.config
+C:\Users\GiangHTT\Documents\Visual Studio 2015\Projects\QLKhachSan\QLKhachSan\obj\Debug\QLKhachSan.csprojResolveAssemblyReference.cache
+C:\Users\GiangHTT\Documents\Visual Studio 2015\Projects\QLKhachSan\QLKhachSan\obj\Debug\QLKhachSan.GUI.Main.resources
+C:\Users\GiangHTT\Documents\Visual Studio 2015\Projects\QLKhachSan\QLKhachSan\obj\Debug\QLKhachSan.Properties.Resources.resources
+C:\Users\GiangHTT\Documents\Visual Studio 2015\Projects\QLKhachSan\QLKhachSan\obj\Debug\QLKhachSan.csproj.GenerateResource.Cache
+C:\Users\GiangHTT\Documents\Visual Studio 2015\Projects\QLKhachSan\QLKhachSan\bin\Debug\QLKhachSan.exe
+C:\Users\GiangHTT\Documents\Visual Studio 2015\Projects\QLKhachSan\QLKhachSan\bin\Debug\QLKhachSan.pdb
+C:\Users\GiangHTT\Documents\Visual Studio 2015\Projects\QLKhachSan\QLKhachSan\bin\Debug\BUS.dll
+C:\Users\GiangHTT\Documents\Visual Studio 2015\Projects\QLKhachSan\QLKhachSan\bin\Debug\DAL.dll
+C:\Users\GiangHTT\Documents\Visual Studio 2015\Projects\QLKhachSan\QLKhachSan\bin\Debug\DevComponents.DotNetBar2.dll
+C:\Users\GiangHTT\Documents\Visual Studio 2015\Projects\QLKhachSan\QLKhachSan\bin\Debug\BUS.pdb
+C:\Users\GiangHTT\Documents\Visual Studio 2015\Projects\QLKhachSan\QLKhachSan\bin\Debug\DAL.pdb
+C:\Users\GiangHTT\Documents\Visual Studio 2015\Projects\QLKhachSan\QLKhachSan\obj\Debug\QLKhachSan.exe
+C:\Users\GiangHTT\Documents\Visual Studio 2015\Projects\QLKhachSan\QLKhachSan\obj\Debug\QLKhachSan.pdb

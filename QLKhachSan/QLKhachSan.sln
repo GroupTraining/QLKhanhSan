@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QLKhachSan", "QLKhachSan\QLKhachSan.csproj", "{DCB87156-F0D1-4F22-A372-98C5FEC687D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BUS", "BUS\BUS.csproj", "{32D76639-9AA8-4946-940E-E62819B5660E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{D8ECB11D-172C-4D96-A522-C58E0D89BFD4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DCB87156-F0D1-4F22-A372-98C5FEC687D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCB87156-F0D1-4F22-A372-98C5FEC687D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCB87156-F0D1-4F22-A372-98C5FEC687D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCB87156-F0D1-4F22-A372-98C5FEC687D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32D76639-9AA8-4946-940E-E62819B5660E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32D76639-9AA8-4946-940E-E62819B5660E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32D76639-9AA8-4946-940E-E62819B5660E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32D76639-9AA8-4946-940E-E62819B5660E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8ECB11D-172C-4D96-A522-C58E0D89BFD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8ECB11D-172C-4D96-A522-C58E0D89BFD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8ECB11D-172C-4D96-A522-C58E0D89BFD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8ECB11D-172C-4D96-A522-C58E0D89BFD4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
