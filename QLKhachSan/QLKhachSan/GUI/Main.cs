@@ -30,12 +30,6 @@ namespace QLKhachSan.GUI
             a.Show();
         }
 
-        private void tHỐNGKÊPHÒNGToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmThongkephong b = new frmThongkephong();
-            b.Show();
-        }
-
         private void cHỈNHSỬADỊCHVỤToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmChinhsuaDV t = new frmChinhsuaDV();
@@ -46,12 +40,6 @@ namespace QLKhachSan.GUI
         {
             frmTimkiemdv g = new frmTimkiemdv();
             g.Show();
-        }
-
-        private void tHỐNGKÊDỊCHVỤToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmThongkedv h = new frmThongkedv();
-            h.Show();
         }
 
         private void cHỈNHSỬAToolStripMenuItem_Click(object sender, EventArgs e)
@@ -66,12 +54,6 @@ namespace QLKhachSan.GUI
             d.Show();
         }
 
-        private void tHỐNGKÊToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmThongkehddv q = new frmThongkehddv();
-            q.Show();
-        }
-
         private void cHỈNHSỬAHDTPToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmChinhsuahdtp s = new frmChinhsuahdtp();
@@ -84,12 +66,6 @@ namespace QLKhachSan.GUI
             f.Show();
         }
 
-        private void tHỐNGKÊHDTPToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmThongkehdtp m = new frmThongkehdtp();
-            m.Show();
-        }
-
         private void cHỈNHSỬAHDTTToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmChinhsuahdtt z = new frmChinhsuahdtt();
@@ -100,12 +76,6 @@ namespace QLKhachSan.GUI
         {
             frmTimkiemhdtt i = new frmTimkiemhdtt();
             i.Show();
-        }
-
-        private void tHỐNGKÊHDTTToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmThongkehdtt v = new frmThongkehdtt();
-            v.Show();
         }
     }
 }
