@@ -28,6 +28,10 @@ namespace QLKhachSan.GUI
         private void btnOK_Click(object sender, EventArgs e)
         {
             x  = bus.add_Hdtt(txtMahdtt.Text, txtMap.Text, txtMakhtt.Text, dtpN.Text, txtTien.Text, txtManv.Text);
+            if(x == 0)
+            {
+                MessageBox.Show("Kiểm tra dữ liệu nhập vào, nhập lại", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            }
         }
     }
 }

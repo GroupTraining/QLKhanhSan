@@ -93,13 +93,22 @@ namespace QLKhachSan.GUI
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            code.edit_Hdtt(txtMahdtt.Text, txtMap.Text, txtMakhtt.Text, dtpN.Text, txtTien.Text, txtManv.Text);
+            int t = code.edit_Hdtt(txtMahdtt.Text, txtMap.Text, txtMakhtt.Text, dtpN.Text, txtTien.Text, txtManv.Text);
+            if(t == 1)
+            {
+                MessageBox.Show("Sửa thành công", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.None);
+            }
+            else
+            {
+                MessageBox.Show("Kiểm tra lại thông tin", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            }
             dataGridView1.DataSource = code.get_Hdtt();
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
             code.delete_Hdtt(txtMahdtt.Text);
+            MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.None);
             dataGridView1.DataSource = code.get_Hdtt();
         }
     }
