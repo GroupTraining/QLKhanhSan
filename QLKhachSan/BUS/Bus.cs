@@ -18,27 +18,49 @@ namespace BUS
         }
         public int add_Hdtt(string ma1, string ma2, string ma3, string ngay, string tien, string ma4)
         {
-            HDThanhToan tt = new HDThanhToan();
-            tt.MaHDTT = ma1;
-            tt.MaPhong = ma2;
-            tt.MaKHTT = ma3;
-            tt.NgayThanhToan = Convert.ToDateTime(ngay);
-            tt.TongTienThanhToan = Convert.ToInt32(tien);
-            tt.MaNV = ma4;
-            data.HDThanhToans.InsertOnSubmit(tt);
-            data.SubmitChanges();
-            return 1;
+            int so1 = (from p in data.HDThanhToans where p.MaHDTT == ma1 select p).Count();
+            int so2 = (from p in data.HDThuePhongs where p.MaPhong == ma2 select p).Count();
+            int so3 = (from p in data.HDThuePhongs where p.MaKHThue == ma3 select p).Count();
+            int so4 = (from p in data.NhanViens where p.MaNV == ma4 select p).Count();
+            if (so1 == 0 && so2 == 1 && so3 == 1 && so4 == 1)
+            {
+                HDThanhToan tt = new HDThanhToan();
+                tt.MaHDTT = ma1;
+                tt.MaPhong = ma2;
+                tt.MaKHTT = ma3;
+                tt.NgayThanhToan = Convert.ToDateTime(ngay);
+                tt.TongTienThanhToan = Convert.ToInt32(tien);
+                tt.MaNV = ma4;
+                data.HDThanhToans.InsertOnSubmit(tt);
+                data.SubmitChanges();
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
         }
-        public object edit_Hdtt(string ma1, string ma2, string ma3, string ngay, string tien, string ma4)
+        public int edit_Hdtt(string ma1, string ma2, string ma3, string ngay, string tien, string ma4)
         {
-            var hdtt = data.HDThanhToans.Single(a => a.MaHDTT == ma1);
-            hdtt.MaPhong = ma2;
-            hdtt.MaKHTT = ma3;
-            hdtt.NgayThanhToan = Convert.ToDateTime(ngay);
-            hdtt.TongTienThanhToan = Convert.ToInt32(tien);
-            hdtt.MaNV = ma4;
-            data.SubmitChanges();
-            return 1;
+            int so1 = (from p in data.HDThanhToans where p.MaHDTT == ma1 select p).Count();
+            int so2 = (from p in data.HDThuePhongs where p.MaPhong == ma2 select p).Count();
+            int so3 = (from p in data.HDThuePhongs where p.MaKHThue == ma3 select p).Count();
+            int so4 = (from p in data.NhanViens where p.MaNV == ma4 select p).Count();
+            if (so1 == 1 && so2 == 1 && so3 == 1 && so4 == 1)
+            {
+                var hdtt = data.HDThanhToans.Single(a => a.MaHDTT == ma1);
+                hdtt.MaPhong = ma2;
+                hdtt.MaKHTT = ma3;
+                hdtt.NgayThanhToan = Convert.ToDateTime(ngay);
+                hdtt.TongTienThanhToan = Convert.ToInt32(tien);
+                hdtt.MaNV = ma4;
+                data.SubmitChanges();
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
         }
         public object delete_Hdtt(string ma1)
         {
