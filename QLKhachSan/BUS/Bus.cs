@@ -129,5 +129,44 @@ namespace BUS
             return 1;
 
         }
+        //Chỉnh sửa thêm,sửa,xóa dịch vụ
+        public object getalldv()
+        {
+            return data.DichVus;
+        }
+        public bool add_dv(string id,string name,int amount)
+        {
+            if(data.DichVus.Single(p=> p.MaDV == id) == null)
+            {
+                DichVu dv = new DichVu();
+                dv.MaDV = id;
+                dv.TenDV = name;
+                dv.GiaDV = amount;
+                dv.MaNQL = null;
+                data.DichVus.InsertOnSubmit(dv);
+                data.SubmitChanges();
+                return true;
+            }else
+            {
+                return false;
+            }
+            
+        }
+        public bool edit_dv(string ma,string name, int amount)
+        {
+            DichVu dv = data.DichVus.Single(p => p.MaDV == ma);
+            dv.TenDV = name;
+            dv.GiaDV = amount;
+            data.SubmitChanges();
+            return true;
+        }
+        public bool del_dv(string id)
+        {
+            DichVu dv = data.DichVus.Single(p => p.MaDV == id);
+            data.DichVus.DeleteOnSubmit(dv);
+            data.SubmitChanges();
+            return true;
+        }
+
     }
 }
