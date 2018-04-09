@@ -10,11 +10,42 @@ namespace BUS
     public class Bus
     {
         DataDiagramDataContext data = new DataDiagramDataContext();
-
+        //chỉnh sửa, thêm, xóa, tìm kiếm hóa đơn thuê phòng
         public object get_Hdtt()
         {
             var hddt = from a in data.HDThanhToans select a;
             return hddt;
+        }
+        public int add_Hdtt(string ma1, string ma2, string ma3, string ngay, string tien, string ma4)
+        {
+            HDThanhToan tt = new HDThanhToan();
+            tt.MaHDTT = ma1;
+            tt.MaPhong = ma2;
+            tt.MaKHTT = ma3;
+            tt.NgayThanhToan = Convert.ToDateTime(ngay);
+            tt.TongTienThanhToan = Convert.ToInt32(tien);
+            tt.MaNV = ma4;
+            data.HDThanhToans.InsertOnSubmit(tt);
+            data.SubmitChanges();
+            return 1;
+        }
+        public object edit_Hdtt(string ma1, string ma2, string ma3, string ngay, string tien, string ma4)
+        {
+            var hdtt = data.HDThanhToans.Single(a => a.MaHDTT == ma1);
+            hdtt.MaPhong = ma2;
+            hdtt.MaKHTT = ma3;
+            hdtt.NgayThanhToan = Convert.ToDateTime(ngay);
+            hdtt.TongTienThanhToan = Convert.ToInt32(tien);
+            hdtt.MaNV = ma4;
+            data.SubmitChanges();
+            return 1;
+        }
+        public object delete_Hdtt(string ma1)
+        {
+            var hdtt = data.HDThanhToans.Single(a => a.MaHDTT == ma1);
+            data.HDThanhToans.DeleteOnSubmit(hdtt);
+            data.SubmitChanges();
+            return 1;
         }
 
         public  object get_Hdtp()
