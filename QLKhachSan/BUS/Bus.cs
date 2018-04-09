@@ -55,5 +55,48 @@ namespace BUS
             return tk;
 
         }
+
+        //chỉnh sửa, thêm, sửa, xóa phòng
+        public object get_phong()
+        {
+            var p = from pa in data.Phongs
+                    select new
+                    {
+                        pa.SoPhong,
+                        pa.LoaiPhong,
+                        pa.GiaPhong,
+                        pa.TinhTrangPhong
+                    };
+            return p;
+        }
+        public object them_phong(string sp, string lp, string g, string ttp)
+        {
+            Phong p = new Phong();
+            p.SoPhong = sp;
+            p.LoaiPhong = lp;
+            p.GiaPhong = Convert.ToInt32(g);
+            p.TinhTrangPhong = ttp;
+            data.Phongs.InsertOnSubmit(p);
+            data.SubmitChanges();
+            return 1;
+        }
+        public object sua_phong(string sp, string lp, string g, string ttp)
+        {
+            var p = data.Phongs.Single(a => a.SoPhong == sp);
+            p.SoPhong = sp;
+            p.LoaiPhong = lp;
+            p.GiaPhong = Convert.ToInt32(g);
+            p.TinhTrangPhong = ttp;
+            data.SubmitChanges();
+            return 1;
+        }
+        public object xoa_phong(string sp)
+        {
+            var p = data.Phongs.Single(a => a.SoPhong == sp);         
+            data.Phongs.DeleteOnSubmit(p);          
+            data.SubmitChanges();
+            return 1;
+
+        }
     }
 }
