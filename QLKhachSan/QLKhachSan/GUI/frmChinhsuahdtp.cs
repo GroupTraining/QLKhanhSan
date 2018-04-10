@@ -29,7 +29,9 @@ namespace QLKhachSan.GUI
             textBox2.Enabled = false;
             textBox3.Enabled = false;
             textBox4.Enabled = false;
+            textBox5.Enabled = false;
             textBox1.Text = dataGridViewHdtp.CurrentRow.Cells["MaPhong"].Value.ToString();
+            textBox5.Text = dataGridViewHdtp.CurrentRow.Cells["SoPhong"].Value.ToString();
             textBox2.Text = dataGridViewHdtp.CurrentRow.Cells["TenKHThue"].Value.ToString();
             textBox4.Text = dataGridViewHdtp.CurrentRow.Cells["ThoiGianThue"].Value.ToString();
             textBox3.Text = dataGridViewHdtp.CurrentRow.Cells["TienPhong"].Value.ToString();
@@ -37,30 +39,32 @@ namespace QLKhachSan.GUI
             dateTimePicker2.Text = dataGridViewHdtp.CurrentRow.Cells["NgayTra"].Value.ToString();
         }
 
-        int thanhtien = 0;
         DateTime ngayden;
         DateTime ngaytra;
         TimeSpan thoigianthue;
-        DateTime time = DateTime.Now;
+        
 
-        private void comboBoxLP_SelectedIndexChanged(object sender, EventArgs e)
+        private void buttonX1_Click(object sender, EventArgs e)
         {
-            ngayden = DateTime.ParseExact(dateTimePicker1.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
-            ngaytra = DateTime.ParseExact(dateTimePicker2.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            ngayden = Convert.ToDateTime(dateTimePicker1.Text);
+            ngaytra = Convert.ToDateTime(dateTimePicker2.Text);
             thoigianthue = ngaytra - ngayden;
-            if (thoigianthue.TotalHours < 0)
+            if (thoigianthue.TotalDays < 0)
             {
                 MessageBox.Show("Nhập lại giá trị ngày trả phòng");
                 return;
             }
-        }
-
-        private void buttonX1_Click(object sender, EventArgs e)
-        {
-            
-            bus.EditHdtp(textBox1.Text,dateTimePicker1.Text, dateTimePicker2.Text);
+            else
+            {
+                textBox4.Text = Convert.ToString(thoigianthue.TotalDays);
+            }
+                bus.EditHdtp(textBox1.Text,textBox5.Text,dateTimePicker1.Text, dateTimePicker2.Text,textBox4.Text);
             MessageBox.Show("Chỉnh sửa thành công!!");
             textBox1.Text = "";
+            textBox2.Text = "";
+            textBox3.Text = "";
+            textBox4.Text = "";
+            textBox5.Text = "";
             dataGridViewHdtp.DataSource = bus.get_suaHdtp();
 
         }
@@ -73,6 +77,7 @@ namespace QLKhachSan.GUI
             textBox2.Text = "";
             textBox3.Text = "";
             textBox4.Text = "";
+            textBox5.Text = "";
             dataGridViewHdtp.DataSource = bus.get_suaHdtp();
         }
     }
