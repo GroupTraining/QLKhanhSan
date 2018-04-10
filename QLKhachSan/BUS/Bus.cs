@@ -70,6 +70,25 @@ namespace BUS
             return 1;
         }
 
+        public object get_suaHdtp()
+        {
+            var hdtp = from b in data.HDThuePhongs
+                       from a in data.KhachHangs
+                       where b.MaKHThue == a.MaKH
+                       select new
+                       {
+                           MaPhong = b.MaPhong,
+                           TenKHThue = a.TenKH,
+                           NgayThue = b.NgayThue,
+                           NgayTra = b.NgayTra,
+                           ThoiGianThue = b.ThoiGianThue,
+                           TienPhong = b.TienPhong,
+                           MaNV = b.MaNV
+                       };
+            return hdtp;
+
+        }
+
         public  object get_Hdtp()
         {
             var hdtp = from b in data.HDThuePhongs 
@@ -190,5 +209,31 @@ namespace BUS
             return true;
         }
 
+        public int EditHdtp(string ma,string ngayden,string ngaytra)
+        {
+            var hdtp = data.HDThuePhongs.Single(p => p.MaPhong == ma);
+           
+            hdtp.NgayThue = Convert.ToDateTime(ngayden);
+            hdtp.NgayTra = Convert.ToDateTime(ngaytra);
+            data.SubmitChanges();
+            return 1;
+        }
+
+        public int delHdtp(string ma)
+        {
+            var hdtp = data.HDThuePhongs.Single(p => p.MaPhong == ma);
+            var tp = data.ThuePhongs.OrderBy(p => p.MaPhong == ma);
+            var cttp = data.ChiTietThuePhongs.Single(p => p.MaPhong == ma);
+            var hdtt = data.HDThanhToans.Single(p => p.MaPhong == ma);
+            data.HDThanhToans.DeleteOnSubmit(hdtt);
+            data.HDThuePhongs.DeleteOnSubmit(hdtp);
+            data.ChiTietThuePhongs.DeleteOnSubmit(cttp);
+            data.ThuePhongs.DeleteAllOnSubmit(tp);
+            data.SubmitChanges();
+            return 1;
+        }
+
     }
 }
+
+
