@@ -132,7 +132,71 @@ namespace BUS
             return tk;
 
         }
+        //Chỉnh sửa hddv
+        public object getDataHDDV()
+        {
+            var tk = from u in data.HDDichVus
+                     from v in data.KhachHangs
+                     from t in data.ChiTietDVs
+                     from z in data.DichVus
+                     where u.MaKH == v.MaKH && u.MaHD == t.MaHD && t.MaDV == z.MaDV
+                     select new
+                     {
+                         MaHD = u.MaHD,
+                         HoTen = v.TenKH,
+                         TenDV = z.TenDV,
+                         NgayLap = u.NgayLapHD,
+                         SoLuongDV = t.SoLuongDV,
+                         ThanhTien = t.ThanhTien
 
+                     };
+            return tk;
+        }
+        public object TimKiem_Hddv(string HoTen)
+        {
+            var tk = from u in data.HDDichVus
+                     from v in data.KhachHangs
+                     where u.MaKH == v.MaKH
+                     select new
+                     {
+                         MaHD = u.MaHD,
+                         MaKH = u.MaKH,
+                         HoTen = v.TenKH,
+                         NgayLap = u.NgayLapHD,
+                         TongTien = u.TongTien
+
+                     } into timkiemHddv
+                     where timkiemHddv.HoTen.Contains(HoTen)
+
+                     select timkiemHddv;
+            return tk;
+
+        }
+        public int EditHddv(string mahd, string madv, string soluong)
+        {
+            var chitiet = data.ChiTietDVs.Single(a => a.MaHD == mahd && a.MaDV == madv);
+            var hoadon = data.HDDichVus.Single(b => b.MaHD == mahd);
+            var dichvu = data.DichVus.Single(c => c.MaDV == madv);
+            
+            chitiet.SoLuongDV = Convert.ToInt32 (soluong);
+            int bandau = Convert.ToInt32(chitiet.ThanhTien);
+            chitiet.ThanhTien = Convert.ToInt32(soluong) * dichvu.GiaDV;
+            hoadon.TongTien = hoadon.TongTien + (chitiet.ThanhTien - bandau);
+
+            data.SubmitChanges();
+            return 1;
+        }
+        public int delHddv(string mahd, string madv)
+        {
+            var chitiet = data.ChiTietDVs.Single(a => a.MaHD == mahd && a.MaDV == madv);
+            var hoadon = data.HDDichVus.Single(b => b.MaHD == mahd);
+
+            int chenhlech = Convert.ToInt32(chitiet.ThanhTien);
+            data.ChiTietDVs.DeleteOnSubmit(chitiet);
+            hoadon.TongTien = hoadon.TongTien - chenhlech;
+            data.SubmitChanges();
+            return 1;
+        }
         //chỉnh sửa, thêm, sửa, xóa phòng
         public object get_phong()
         {
