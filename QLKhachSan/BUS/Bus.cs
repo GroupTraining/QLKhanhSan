@@ -74,10 +74,15 @@ namespace BUS
         {
             var hdtp = from b in data.HDThuePhongs
                        from a in data.KhachHangs
+                       from c in data.ChiTietThuePhongs
+                       from d in data.Phongs
                        where b.MaKHThue == a.MaKH
+                       where b.MaPhong == c.MaPhong
+                       where d.SoPhong == c.SoPhong
                        select new
                        {
                            MaPhong = b.MaPhong,
+                           SoPhong = d.SoPhong,
                            TenKHThue = a.TenKH,
                            NgayThue = b.NgayThue,
                            NgayTra = b.NgayTra,
@@ -209,12 +214,16 @@ namespace BUS
             return true;
         }
 
-        public int EditHdtp(string ma,string ngayden,string ngaytra)
+        public int EditHdtp(string ma,string sp,string ngayden,string ngaytra,string thoigianthue)
         {
             var hdtp = data.HDThuePhongs.Single(p => p.MaPhong == ma);
-           
+            var cttp = data.ChiTietThuePhongs.Single(p => p.MaPhong == ma);
+            var phong = data.Phongs.Single(p => p.SoPhong == sp);
+            cttp.SoPhong = phong.SoPhong;
             hdtp.NgayThue = Convert.ToDateTime(ngayden);
             hdtp.NgayTra = Convert.ToDateTime(ngaytra);
+            hdtp.ThoiGianThue = Convert.ToInt32(thoigianthue);
+            hdtp.TienPhong = phong.GiaPhong * Convert.ToInt32(thoigianthue);
             data.SubmitChanges();
             return 1;
         }

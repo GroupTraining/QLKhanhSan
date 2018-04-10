@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridViewHdtp = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -44,20 +44,22 @@
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.labelX7 = new DevComponents.DotNetBar.LabelX();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHdtp)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewHdtp
             // 
             this.dataGridViewHdtp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewHdtp.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewHdtp.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewHdtp.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dataGridViewHdtp.Location = new System.Drawing.Point(305, 1);
             this.dataGridViewHdtp.Name = "dataGridViewHdtp";
@@ -67,7 +69,7 @@
             // 
             // labelX1
             // 
-            this.labelX1.Location = new System.Drawing.Point(12, 56);
+            this.labelX1.Location = new System.Drawing.Point(15, 23);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(91, 27);
             this.labelX1.TabIndex = 1;
@@ -75,7 +77,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(109, 60);
+            this.textBox1.Location = new System.Drawing.Point(112, 27);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(92, 20);
             this.textBox1.TabIndex = 2;
@@ -98,7 +100,7 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePicker1.CustomFormat = "MM/dd/yyyy";
             this.dateTimePicker1.Location = new System.Drawing.Point(109, 129);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(162, 20);
@@ -106,7 +108,7 @@
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePicker2.CustomFormat = "MM/dd/yyyy";
             this.dateTimePicker2.Location = new System.Drawing.Point(109, 162);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(162, 20);
@@ -179,11 +181,28 @@
             this.labelX6.TabIndex = 13;
             this.labelX6.Text = "Thời Gian Thuê";
             // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(112, 60);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(92, 20);
+            this.textBox5.TabIndex = 18;
+            // 
+            // labelX7
+            // 
+            this.labelX7.Location = new System.Drawing.Point(15, 56);
+            this.labelX7.Name = "labelX7";
+            this.labelX7.Size = new System.Drawing.Size(91, 27);
+            this.labelX7.TabIndex = 17;
+            this.labelX7.Text = "Số Phòng";
+            // 
             // frmChinhsuahdtp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(923, 358);
+            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.labelX7);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.labelX5);
             this.Controls.Add(this.textBox4);
@@ -224,5 +243,7 @@
         private DevComponents.DotNetBar.LabelX labelX5;
         private System.Windows.Forms.TextBox textBox4;
         private DevComponents.DotNetBar.LabelX labelX6;
+        private System.Windows.Forms.TextBox textBox5;
+        private DevComponents.DotNetBar.LabelX labelX7;
     }
 }
