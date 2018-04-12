@@ -10,10 +10,19 @@ namespace BUS
     public class Bus
     {
         DataDiagramDataContext data = new DataDiagramDataContext();
-        //chỉnh sửa, thêm, xóa, tìm kiếm hóa đơn thuê phòng
+        //chỉnh sửa, thêm, xóa, tìm kiếm hóa đơn thanh toán
         public object get_Hdtt()
         {
-            var hddt = from a in data.HDThanhToans select a;
+            var hddt = from a in data.HDThanhToans
+                       select new
+                       {
+                           MaHDTT = a.MaHDTT,
+                           MaPhong = a.MaPhong,
+                           MaKHTT = a.MaKHTT,
+                           NgayThanhToan = a.NgayThanhToan,
+                           TongTienThanhToan = a.TongTienThanhToan,
+                           MaNV = a.MaNV
+                       };
             return hddt;
         }
         public int add_Hdtt(string ma1, string ma2, string ma3, string ngay, string tien, string ma4)
@@ -69,7 +78,23 @@ namespace BUS
             data.SubmitChanges();
             return 1;
         }
-
+        public object search_Hdtt(string giatri)
+        {
+            var hddt = from a in data.HDThanhToans
+                       select new
+                       {
+                           MaHDTT = a.MaHDTT,
+                           MaPhong = a.MaPhong,
+                           MaKHTT = a.MaKHTT,
+                           NgayThanhToan = a.NgayThanhToan,
+                           TongTienThanhToan = a.TongTienThanhToan,
+                           MaNV = a.MaNV
+                       } into hd where hd.MaHDTT.Contains(giatri) || hd.MaPhong.Contains(giatri) || hd.MaKHTT.Contains(giatri) || hd.NgayThanhToan.ToString().Contains(giatri) ||
+                         hd.TongTienThanhToan.ToString().Contains(giatri) || hd.MaNV.Contains(giatri)
+                         select hd;
+            return hddt;
+        }
+        //chỉnh sửa, thêm, xóa, tìm kiếm hóa đơn thuê phòng
         public object get_suaHdtp()
         {
             var hdtp = from b in data.HDThuePhongs

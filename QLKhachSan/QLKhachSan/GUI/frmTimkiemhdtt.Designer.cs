@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.txtGiatri = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.MaHDTT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,7 +56,7 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.button1);
-            this.splitContainer1.Panel1.Controls.Add(this.textBox1);
+            this.splitContainer1.Panel1.Controls.Add(this.txtGiatri);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
             // 
             // splitContainer1.Panel2
@@ -65,24 +65,6 @@
             this.splitContainer1.Size = new System.Drawing.Size(1107, 434);
             this.splitContainer1.SplitterDistance = 71;
             this.splitContainer1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(169, 35);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nhập thông tin tìm kiếm";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(336, 32);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(444, 20);
-            this.textBox1.TabIndex = 1;
             // 
             // button1
             // 
@@ -93,6 +75,25 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "Tìm kiếm";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // txtGiatri
+            // 
+            this.txtGiatri.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtGiatri.Location = new System.Drawing.Point(336, 32);
+            this.txtGiatri.Name = "txtGiatri";
+            this.txtGiatri.Size = new System.Drawing.Size(444, 20);
+            this.txtGiatri.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(169, 35);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(118, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Nhập thông tin tìm kiếm";
             // 
             // dataGridView1
             // 
@@ -175,7 +176,7 @@
 
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtGiatri;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaHDTT;
