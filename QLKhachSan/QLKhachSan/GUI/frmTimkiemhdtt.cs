@@ -20,5 +20,10 @@ namespace QLKhachSan.GUI
 
             dataGridView1.DataSource = code.get_Hdtt();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = code.search_Hdtt(txtGiatri.Text);
+        }
     }
 }
