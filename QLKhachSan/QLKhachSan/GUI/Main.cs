@@ -24,11 +24,7 @@ namespace QLKhachSan.GUI
             p.Show();
         }
 
-        private void tÌMKIẾMPHÒNGToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmTimkiemphong a = new frmTimkiemphong();
-            a.Show();
-        }
+       
 
         private void cHỈNHSỬADỊCHVỤToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -36,11 +32,7 @@ namespace QLKhachSan.GUI
             t.Show();
         }
 
-        private void tÌMKIẾMDỊCHVỤToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmTimkiemdv g = new frmTimkiemdv();
-            g.Show();
-        }
+       
 
         private void cHỈNHSỬAToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -48,11 +40,7 @@ namespace QLKhachSan.GUI
             k.Show();
         }
 
-        private void tÌMKIẾMToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmTimkiemhddv d = new frmTimkiemhddv();
-            d.Show();
-        }
+   
 
         private void cHỈNHSỬAHDTPToolStripMenuItem_Click(object sender, EventArgs e)
         {
