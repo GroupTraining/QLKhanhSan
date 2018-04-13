@@ -10,6 +10,20 @@ namespace BUS
     public class Bus
     {
         DataDiagramDataContext data = new DataDiagramDataContext();
+        public int check_login(string user, string pass)
+        {
+            int login = (from tks in data.TaiKhoans
+                         where tks.Username == user && tks.Password == pass
+                         select tks).Count();
+            if (login == 1)
+            {
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
+        }
         //chỉnh sửa, thêm, xóa, tìm kiếm hóa đơn thanh toán
         public object get_Hdtt()
         {
